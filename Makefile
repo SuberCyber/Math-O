@@ -1,8 +1,8 @@
 CXX = g++-5
 CXXFLAGS = -std=c++14 -Wall
 
-a3q2: testharn.o mastermind.o
-	${CXX} ${CXXFLAGS} testharn.o mastermind.o -o a3q2
+escape: testharn.o mastermind.o
+	${CXX} ${CXXFLAGS} testharn.o mastermind.o -o escape
 
 mastermind.o: mastermind.cc mastermind.h
 	${CXX} ${CXXFLAGS} -c mastermind.cc
@@ -12,4 +12,4 @@ testharn.o: main.cc mastermind.h
 
 .PHONY: clean
 
-clean: rm *.o a3q2
+clean: rm *.o escapeRoom
