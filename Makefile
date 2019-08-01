@@ -1,9 +1,9 @@
 CXX = g++-5
-CXXFLAGS = -std=c++14 -Wall -Wwrite-strings
+CXXFLAGS = -std=c++14 -Wall
 
 escape: escape.o mastermind.o riddles.o
 	${CXX} ${CXXFLAGS} escape.o mastermind.o riddles.o -o escape
-
+  
 mastermind.o: mastermind.cc mastermind.h
 	${CXX} ${CXXFLAGS} -c mastermind.cc
 
