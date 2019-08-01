@@ -2,75 +2,57 @@
 #include <iostream>
 #include <cstdlib>
 #include <string>
+#include "riddles.h"
+
 using namespace std;
 
-void fixString (string & s){
-    int len = s.length();
-    for (int i = 0; i < len; ++ i){
-        if (s[i] >= 'A' && s[i] <= 'Z'){
-            s[i] = s[i] + 'a' - 'A';
-        }
-    }
-}
-
-int main(int argc, char** argv) {
+int main() {
     string i;
-    int num;
-    string s;
-    cout << "Enter passwords:" << endl;
-    bool passwordPie = false;
-    bool password1047 = false;
     int wrong = 0;
+
+    cout << "\u001b[40;1m\u001b[37;1mEnter password:" << endl;
+
     while (cin >> i){
         // number to match
-        if (i == "314159"){
-            passwordPie = true;  
-            if (password1047) break;
-            cout << "Correct! There is one more password to find" << endl;
-        } else if (i == "1047"){
-            password1047 = true;
-            if (passwordPie) break;
-            cout << "Correct! There is one more password to find" << endl;
+        if (i == "1047"){
+            cout << "\u001b[42mCorrect!\u001b[40;1m" << endl;
+            break;
         } else {
+            cout << "\u001b[1A\u001b[2K";
             ++ wrong;
-            cout << "Keep looking!" << endl;
+            cout << "This is not the password!" << endl;
         }
 
-        if (wrong >= 4){
-            if (!password1047){
+        if (wrong >= 4 && (wrong % 4  == 0)){
             cout << "Time is ticking!" << endl;
-            } else {
-            cout << "Check your math!" << endl;
-            }
         }
     }
-    cout << "What gives you the strength and power to walk through walls?" << endl;
-    while (cin >> s){
-        fixString(s);
-        if (s == "doors" || s == "door") break;
-    } 
-    cout << "What food goes on and on without a beginning, middle or end?" << endl;
-    while (cin >> s){
-        fixString(s);
-        if (s == "donuts" || s == "donut") break;
-    }
-    cout << "What has a head and a tail but no legs?" << endl;
-    while (cin >> s){
-        fixString(s);
-        if (s == "coins" || s == "coin") break;
-    } 
-    cout << "What is the answer to life, the universe, and everything?" << endl;
-    while (cin >> num){
-        if (num == 42) break;
-    }
-    cout << endl << endl;
-    cout << 271 << endl;
-    cout << endl << endl;
-    Mastermind mm {2};
+    
+    Riddles r;
+    
+    cout << endl;
+
+    Mastermind mm;
     mm.playGame();
+   
+    
     cout << endl << endl; 
     cout << endl << endl;
-    cout << "UULL" << endl;
-    cout << "math" << endl;  
+    cout << "            \u001b[35;1m     UULL" << endl;
+    cout << endl << endl;
+    cout << "                     ..-. .- ... - \u001b[0m" << endl;  
+    cout << endl << endl;
+
+    cout << "Please enter Poke-password:" << endl;
+
+    while (cin >> i){
+        if (i == "help"){
+        cout << endl << endl;
+        cout << "congradulatuions for helping the professors!" << endl;
+        }
+        else {
+        cout << "that is not the password" << endl;
+        }
+    }
     return 0;
 }
