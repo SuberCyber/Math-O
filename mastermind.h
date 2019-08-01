@@ -6,13 +6,13 @@
 struct Mastermind {
     int seed;
     int codeLength;
-    char* code;
+    const char* code = "0627";
     bool newGame;
     char* guess;
     bool* used;
     int guessLimit = 15;
 
-    Mastermind(int seed);
+    Mastermind();
     ~Mastermind();
 
     void playGame();
