@@ -48,7 +48,7 @@ int main() {
     cout << endl << endl;
     cout << "            \u001b[35;1m     UULL" << endl;
     cout << endl << endl;
-    cout << "           -  ..  .  ...  \u001b[0m;1m" << endl;  
+    cout << "           -  ..  .  ...  \u001b[37;1m" << endl;  
     cout << endl << endl;
 
     cout << "Please enter Poke-password:" << endl;
